@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    deploy:
+      mode: replicated
+      replicas: 3
+    ports: 
+      - "8080-8089:3000"
+  port-tutorial:
+    image: "chuckwired/port-tutorial"
