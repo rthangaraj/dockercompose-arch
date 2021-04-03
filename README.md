@@ -26,3 +26,8 @@ go_gc_duration_seconds_count 0
 #### CAdvisor metrics
 
 cadvisor_version_info{cadvisorRevision="30515557",cadvisorVersion="v0.38.6",dockerVersion="20.10.5",kernelVersion="5.4.0-1043-azure",osVersion="Alpine Linux v3.12"} 1
+
+## Healthcheck script
+Call the script with the HTTP URL to check.  curl will
+silently try to get the file and send it to /dev/null.  If it fails,
+it'll set the exit code, which is checked in the check functiomn of the healthcheck script. We can call this using the cronjhob in the host machine. 
