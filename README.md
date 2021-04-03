@@ -31,3 +31,7 @@ cadvisor_version_info{cadvisorRevision="30515557",cadvisorVersion="v0.38.6",dock
 Call the script with the HTTP URL to check.  curl will
 silently try to get the file and send it to /dev/null.  If it fails,
 it'll set the exit code, which is checked in the check functiomn of the healthcheck script. We can call this using the cronjhob in the host machine. 
+
+
+NOTE:
+k8s folder and Jenkinsfile are additional sections added just for bonus value adds
