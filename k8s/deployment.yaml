@@ -1,0 +1,27 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: hello-app-deployment
+   namespace: kube-system
+ spec:
+   replicas: 3
+   selector:
+     matchLabels:
+       app: hello
+   template:
+     metadata:
+       labels:
+         app: hello
+     spec:
+       containers:
+       - name: helloworld
+         image: rameshthangaraj/nodejsappv1
+         imagePullPolicy: Always
+         ports:
+         - containerPort: 8080
+         readinessProbe:
+           initialDelaySeconds: 5
+           periodSeconds: 10
+        livenessProbe:
+          initialDelaySeconds: 15
+          periodSeconds: 20
