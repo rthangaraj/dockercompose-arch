@@ -1,4 +1,4 @@
-#! /usr/bin/sh
+#! /bin/bash
 
 function check {
      if [ $? -ne 0 ] ; then
